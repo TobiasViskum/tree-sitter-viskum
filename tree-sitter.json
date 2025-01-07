@@ -1,0 +1,36 @@
+{
+  "grammars": [
+    {
+      "name": "viskum",
+      "camelcase": "Viskum",
+      "scope": "source.viskum",
+      "file-types": [
+        ".vsc",
+        ".vs"
+      ],
+      "injection-regex": "^viskum$"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "The tree sitter parser for the Viskum language",
+    "authors": [
+      {
+        "name": "Tobias Viskum",
+        "email": "tobias.t.viskum@gmail.com"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/TobiasViskum/tree-sitter-viskum"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
+  }
+}
