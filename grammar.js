@@ -11,17 +11,32 @@ module.exports = grammar({
   name: "viskum",
 
   rules: {
-    // TODO: add the actual grammar rules
-    source_file: $ => repeat($._definition),
+    source: $ => repeat($._item),
 
-    _definition: $ => choice(
-      $.function_definition
-      // TODO: other kinds of definitions
+    _item: $ => choice(
+      $.fn_item
     ),
 
-    function_definition: $ => seq(
-      'fn',
-      $.ident
+    fn_item: $ => seq(
+      "fn",
+      $.ident,
+      $.fn_params,
+      $.block
+    ),
+
+    fn_params: $ => seq(
+      "(",
+      ")"
+    ),
+
+    block: $ => seq(
+      "{",
+      repeat($._stmt),
+      "}"
+    ),
+
+    _stmt: $ => choice(
+      $._item
     ),
 
     ident: $ => /[a-z]+/
