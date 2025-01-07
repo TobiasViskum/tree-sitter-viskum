@@ -24,6 +24,6 @@ module.exports = grammar({
       $.ident
     ),
 
-    ident: $ => /[(a-z)|(A-Z)]+/
+    ident: $ => /[a-z]+/
   }
 });
