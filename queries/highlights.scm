@@ -1,4 +1,3 @@
 [
   "fn"
-  "struct"
 ] @keyword
