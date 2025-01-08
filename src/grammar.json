@@ -32,6 +32,22 @@
         {
           "type": "SYMBOL",
           "name": "enum_item"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "typedef_item"
+        },
+        {
+          "type": "STRING",
+          "value": "ret"
+        },
+        {
+          "type": "STRING",
+          "value": "break"
+        },
+        {
+          "type": "STRING",
+          "value": "continue"
         }
       ]
     },
@@ -79,6 +95,19 @@
         {
           "type": "STRING",
           "value": "struct"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "ident"
+        }
+      ]
+    },
+    "typedef_item": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "typedef"
         },
         {
           "type": "SYMBOL",

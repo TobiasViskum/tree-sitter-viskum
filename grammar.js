@@ -20,7 +20,11 @@ module.exports = grammar({
     _item: $ => choice(
       $.fn_item,
       $.struct_item,
-      $.enum_item
+      $.enum_item,
+      $.typedef_item,
+      "ret",
+      "break",
+      "continue"
     ),
 
     fn_item: $ => seq(
@@ -36,6 +40,11 @@ module.exports = grammar({
 
     struct_item: $ => seq(
       "struct",
+      $.ident,
+    ),
+
+    typedef_item: $ => seq(
+      "typedef",
       $.ident,
     ),
 
