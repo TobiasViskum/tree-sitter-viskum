@@ -69,6 +69,19 @@
         }
       ]
     },
+    "enum_item": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "enum"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "ident"
+        }
+      ]
+    },
     "block": {
       "type": "SEQ",
       "members": [

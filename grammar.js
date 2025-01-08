@@ -34,6 +34,12 @@ module.exports = grammar({
       $.ident,
     ),
 
+    enum_item: $ => seq(
+      "enum",
+      $.ident
+    ),
+
+
     block: $ => seq(
       "{",
       repeat($._stmt),
