@@ -21,7 +21,7 @@ module.exports = grammar({
 
     fn_item: $ => seq(
       "fn",
-      $.ident,
+      $.identifier,
       $.fn_params,
       $.block
     ),
@@ -32,12 +32,12 @@ module.exports = grammar({
 
     struct_item: $ => seq(
       "struct",
-      $.ident,
+      $.identifier,
     ),
 
     enum_item: $ => seq(
       "enum",
-      $.ident
+      $.identifier
     ),
 
 
@@ -51,6 +51,6 @@ module.exports = grammar({
       $._item
     ),
 
-    ident: $ => /[a-z]+/
+    identifier: $ => /[a-z]+/
   }
 });

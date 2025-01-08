@@ -23,7 +23,7 @@ enum ts_symbol_identifiers {
   anon_sym_enum = 5,
   anon_sym_LBRACE = 6,
   anon_sym_RBRACE = 7,
-  sym_ident = 8,
+  sym_identifier = 8,
   sym_source = 9,
   sym__item = 10,
   sym_fn_item = 11,
@@ -45,7 +45,7 @@ static const char * const ts_symbol_names[] = {
   [anon_sym_enum] = "enum",
   [anon_sym_LBRACE] = "{",
   [anon_sym_RBRACE] = "}",
-  [sym_ident] = "ident",
+  [sym_identifier] = "identifier",
   [sym_source] = "source",
   [sym__item] = "_item",
   [sym_fn_item] = "fn_item",
@@ -67,7 +67,7 @@ static const TSSymbol ts_symbol_map[] = {
   [anon_sym_enum] = anon_sym_enum,
   [anon_sym_LBRACE] = anon_sym_LBRACE,
   [anon_sym_RBRACE] = anon_sym_RBRACE,
-  [sym_ident] = sym_ident,
+  [sym_identifier] = sym_identifier,
   [sym_source] = sym_source,
   [sym__item] = sym__item,
   [sym_fn_item] = sym_fn_item,
@@ -113,7 +113,7 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = false,
   },
-  [sym_ident] = {
+  [sym_identifier] = {
     .visible = true,
     .named = true,
   },
@@ -263,7 +263,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       ACCEPT_TOKEN(anon_sym_RBRACE);
       END_STATE();
     case 19:
-      ACCEPT_TOKEN(sym_ident);
+      ACCEPT_TOKEN(sym_identifier);
       if (('a' <= lookahead && lookahead <= 'z')) ADVANCE(19);
       END_STATE();
     default:
@@ -433,13 +433,13 @@ static const uint16_t ts_small_parse_table[] = {
       sym_block,
   [94] = 1,
     ACTIONS(53), 1,
-      sym_ident,
+      sym_identifier,
   [98] = 1,
     ACTIONS(55), 1,
-      sym_ident,
+      sym_identifier,
   [102] = 1,
     ACTIONS(57), 1,
-      sym_ident,
+      sym_identifier,
   [106] = 1,
     ACTIONS(59), 1,
       ts_builtin_sym_end,

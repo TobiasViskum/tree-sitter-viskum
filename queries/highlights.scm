@@ -1,14 +1,16 @@
+(identifier) @variable
+
 [
-  "fn"
-  "struct"
+    "fn"
+    "struct"
+    "enum",
 ] @keyword
 
-
 [
-  "("
-  ")"
   "["
   "]"
+  "("
+  ")"
   "{"
   "}"
 ] @punctuation.bracket
