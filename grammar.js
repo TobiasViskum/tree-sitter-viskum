@@ -25,7 +25,7 @@ module.exports = grammar({
 
     fn_item: $ => seq(
       "fn",
-      $.ident,
+      field("name", $.ident),
       $.fn_params,
       $.block
     ),
