@@ -117,7 +117,7 @@
     },
     "ident": {
       "type": "PATTERN",
-      "value": "[a-z]+"
+      "value": "[a-zA-Z]+"
     }
   },
   "extras": [

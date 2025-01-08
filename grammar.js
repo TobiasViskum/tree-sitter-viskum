@@ -50,6 +50,6 @@ module.exports = grammar({
       "}"
     ),
 
-    ident: $ => /[a-z]+/
+    ident: $ => /[a-zA-Z]+/
   }
 });

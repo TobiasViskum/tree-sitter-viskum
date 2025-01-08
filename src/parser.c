@@ -236,7 +236,8 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
     case 10:
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(10);
-      if (('a' <= lookahead && lookahead <= 'z')) ADVANCE(19);
+      if (('A' <= lookahead && lookahead <= 'Z') ||
+          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(19);
       END_STATE();
     case 11:
       ACCEPT_TOKEN(ts_builtin_sym_end);
@@ -264,7 +265,8 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 19:
       ACCEPT_TOKEN(sym_ident);
-      if (('a' <= lookahead && lookahead <= 'z')) ADVANCE(19);
+      if (('A' <= lookahead && lookahead <= 'Z') ||
+          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(19);
       END_STATE();
     default:
       return false;
