@@ -14,7 +14,8 @@ module.exports = grammar({
     source: $ => repeat($._item),
 
     _item: $ => choice(
-      $.fn_item
+      $.fn_item,
+      $.struct_item
     ),
 
     fn_item: $ => seq(
@@ -23,10 +24,14 @@ module.exports = grammar({
       $.fn_params,
       $.block
     ),
-
     fn_params: $ => seq(
       "(",
       ")"
+    ),
+
+    struct_item: $ => seq(
+      "struct",
+      $.ident,
     ),
 
     block: $ => seq(
