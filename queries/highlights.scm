@@ -5,12 +5,3 @@
     "struct"
     "enum",
 ] @keyword
-
-[
-  "["
-  "]"
-  "("
-  ")"
-  "{"
-  "}"
-] @punctuation.bracket
