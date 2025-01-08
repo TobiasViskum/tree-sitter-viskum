@@ -9,6 +9,15 @@
         "name": "_item"
       }
     },
+    "_stmt": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_item"
+        }
+      ]
+    },
     "_item": {
       "type": "CHOICE",
       "members": [
@@ -35,7 +44,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "identifier"
+          "name": "ident"
         },
         {
           "type": "SYMBOL",
@@ -69,7 +78,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "identifier"
+          "name": "ident"
         }
       ]
     },
@@ -82,7 +91,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "identifier"
+          "name": "ident"
         }
       ]
     },
@@ -106,16 +115,7 @@
         }
       ]
     },
-    "_stmt": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "_item"
-        }
-      ]
-    },
-    "identifier": {
+    "ident": {
       "type": "PATTERN",
       "value": "[a-z]+"
     }

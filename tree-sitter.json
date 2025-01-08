@@ -5,9 +5,10 @@
       "camelcase": "Viskum",
       "scope": "source.viskum",
       "file-types": [
-        ".vsc",
-        ".vs"
+        "vs",
+        "vsc"
       ],
+      "highlights": "queries/highlights.scm",
       "injection-regex": "^viskum$"
     }
   ],

@@ -23,15 +23,15 @@ enum ts_symbol_identifiers {
   anon_sym_enum = 5,
   anon_sym_LBRACE = 6,
   anon_sym_RBRACE = 7,
-  sym_identifier = 8,
+  sym_ident = 8,
   sym_source = 9,
-  sym__item = 10,
-  sym_fn_item = 11,
-  sym_fn_params = 12,
-  sym_struct_item = 13,
-  sym_enum_item = 14,
-  sym_block = 15,
-  sym__stmt = 16,
+  sym__stmt = 10,
+  sym__item = 11,
+  sym_fn_item = 12,
+  sym_fn_params = 13,
+  sym_struct_item = 14,
+  sym_enum_item = 15,
+  sym_block = 16,
   aux_sym_source_repeat1 = 17,
   aux_sym_block_repeat1 = 18,
 };
@@ -45,15 +45,15 @@ static const char * const ts_symbol_names[] = {
   [anon_sym_enum] = "enum",
   [anon_sym_LBRACE] = "{",
   [anon_sym_RBRACE] = "}",
-  [sym_identifier] = "identifier",
+  [sym_ident] = "ident",
   [sym_source] = "source",
+  [sym__stmt] = "_stmt",
   [sym__item] = "_item",
   [sym_fn_item] = "fn_item",
   [sym_fn_params] = "fn_params",
   [sym_struct_item] = "struct_item",
   [sym_enum_item] = "enum_item",
   [sym_block] = "block",
-  [sym__stmt] = "_stmt",
   [aux_sym_source_repeat1] = "source_repeat1",
   [aux_sym_block_repeat1] = "block_repeat1",
 };
@@ -67,15 +67,15 @@ static const TSSymbol ts_symbol_map[] = {
   [anon_sym_enum] = anon_sym_enum,
   [anon_sym_LBRACE] = anon_sym_LBRACE,
   [anon_sym_RBRACE] = anon_sym_RBRACE,
-  [sym_identifier] = sym_identifier,
+  [sym_ident] = sym_ident,
   [sym_source] = sym_source,
+  [sym__stmt] = sym__stmt,
   [sym__item] = sym__item,
   [sym_fn_item] = sym_fn_item,
   [sym_fn_params] = sym_fn_params,
   [sym_struct_item] = sym_struct_item,
   [sym_enum_item] = sym_enum_item,
   [sym_block] = sym_block,
-  [sym__stmt] = sym__stmt,
   [aux_sym_source_repeat1] = aux_sym_source_repeat1,
   [aux_sym_block_repeat1] = aux_sym_block_repeat1,
 };
@@ -113,12 +113,16 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = false,
   },
-  [sym_identifier] = {
+  [sym_ident] = {
     .visible = true,
     .named = true,
   },
   [sym_source] = {
     .visible = true,
+    .named = true,
+  },
+  [sym__stmt] = {
+    .visible = false,
     .named = true,
   },
   [sym__item] = {
@@ -143,10 +147,6 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
   },
   [sym_block] = {
     .visible = true,
-    .named = true,
-  },
-  [sym__stmt] = {
-    .visible = false,
     .named = true,
   },
   [aux_sym_source_repeat1] = {
@@ -263,7 +263,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       ACCEPT_TOKEN(anon_sym_RBRACE);
       END_STATE();
     case 19:
-      ACCEPT_TOKEN(sym_identifier);
+      ACCEPT_TOKEN(sym_ident);
       if (('a' <= lookahead && lookahead <= 'z')) ADVANCE(19);
       END_STATE();
     default:
@@ -318,11 +318,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_enum] = ACTIONS(9),
   },
   [2] = {
+    [sym__stmt] = STATE(3),
     [sym__item] = STATE(3),
     [sym_fn_item] = STATE(3),
     [sym_struct_item] = STATE(3),
     [sym_enum_item] = STATE(3),
-    [sym__stmt] = STATE(3),
     [aux_sym_block_repeat1] = STATE(3),
     [anon_sym_fn] = ACTIONS(5),
     [anon_sym_struct] = ACTIONS(7),
@@ -330,11 +330,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_RBRACE] = ACTIONS(11),
   },
   [3] = {
+    [sym__stmt] = STATE(4),
     [sym__item] = STATE(4),
     [sym_fn_item] = STATE(4),
     [sym_struct_item] = STATE(4),
     [sym_enum_item] = STATE(4),
-    [sym__stmt] = STATE(4),
     [aux_sym_block_repeat1] = STATE(4),
     [anon_sym_fn] = ACTIONS(5),
     [anon_sym_struct] = ACTIONS(7),
@@ -342,11 +342,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_RBRACE] = ACTIONS(13),
   },
   [4] = {
+    [sym__stmt] = STATE(4),
     [sym__item] = STATE(4),
     [sym_fn_item] = STATE(4),
     [sym_struct_item] = STATE(4),
     [sym_enum_item] = STATE(4),
-    [sym__stmt] = STATE(4),
     [aux_sym_block_repeat1] = STATE(4),
     [anon_sym_fn] = ACTIONS(15),
     [anon_sym_struct] = ACTIONS(18),
@@ -433,13 +433,13 @@ static const uint16_t ts_small_parse_table[] = {
       sym_block,
   [94] = 1,
     ACTIONS(53), 1,
-      sym_identifier,
+      sym_ident,
   [98] = 1,
     ACTIONS(55), 1,
-      sym_identifier,
+      sym_ident,
   [102] = 1,
     ACTIONS(57), 1,
-      sym_identifier,
+      sym_ident,
   [106] = 1,
     ACTIONS(59), 1,
       ts_builtin_sym_end,

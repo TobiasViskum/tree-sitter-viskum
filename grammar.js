@@ -13,6 +13,10 @@ module.exports = grammar({
   rules: {
     source: $ => repeat($._item),
 
+    _stmt: $ => choice(
+      $._item
+    ),
+
     _item: $ => choice(
       $.fn_item,
       $.struct_item,
@@ -21,7 +25,7 @@ module.exports = grammar({
 
     fn_item: $ => seq(
       "fn",
-      $.identifier,
+      $.ident,
       $.fn_params,
       $.block
     ),
@@ -32,14 +36,13 @@ module.exports = grammar({
 
     struct_item: $ => seq(
       "struct",
-      $.identifier,
+      $.ident,
     ),
 
     enum_item: $ => seq(
       "enum",
-      $.identifier
+      $.ident
     ),
-
 
     block: $ => seq(
       "{",
@@ -47,10 +50,6 @@ module.exports = grammar({
       "}"
     ),
 
-    _stmt: $ => choice(
-      $._item
-    ),
-
-    identifier: $ => /[a-z]+/
+    ident: $ => /[a-z]+/
   }
 });

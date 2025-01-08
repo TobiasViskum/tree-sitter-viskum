@@ -1,7 +1,7 @@
-(identifier) @variable
+(ident) @variable
 
 [
     "fn"
     "struct"
-    "enum",
+    "enum"
 ] @keyword
