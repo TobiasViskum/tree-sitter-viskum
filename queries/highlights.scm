@@ -1,0 +1,4 @@
+[
+  "fn"
+  "while"
+] @keyword
