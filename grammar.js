@@ -15,7 +15,8 @@ module.exports = grammar({
 
     _item: $ => choice(
       $.fn_item,
-      $.struct_item
+      $.struct_item,
+      $.enum_item
     ),
 
     fn_item: $ => seq(

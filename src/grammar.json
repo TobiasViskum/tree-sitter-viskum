@@ -19,6 +19,10 @@
         {
           "type": "SYMBOL",
           "name": "struct_item"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "enum_item"
         }
       ]
     },
